@@ -1,9 +1,9 @@
-<?php namespace Blupl\Franchises\Http\Handlers;
+<?php namespace Blupl\Board\Http\Handlers;
 
 use Orchestra\Foundation\Support\MenuHandler;
 use Orchestra\Contracts\Authorization\Authorization;
 
-class FranchiseMenuHandler extends MenuHandler
+class BoardMenuHandler extends MenuHandler
 {
     /**
      * Menu configuration.
@@ -11,9 +11,9 @@ class FranchiseMenuHandler extends MenuHandler
      * @var array
      */
     protected $menu = [
-        'id'    => 'media',
-        'title' => 'Franchise',
-        'link'  => 'orchestra::franchise',
+        'id'    => 'board',
+        'title' => 'Board',
+        'link'  => 'orchestra::board',
         'icon'  => null,
     ];
 

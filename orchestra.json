@@ -8,6 +8,6 @@
         "handles": "franchise"
     },
     "provides": [
-        "Blupl\\Franchises\\FranchiseServiceProvider"
+        "Blupl\\Board\\BoardServiceProvider"
     ]
 }

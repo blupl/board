@@ -1,8 +1,8 @@
-<?php namespace Blupl\Franchises;
+<?php namespace Blupl\Board;
 
 use Orchestra\Support\Providers\ServiceProvider;
 
-class FranchiseServiceProvider extends ServiceProvider
+class BoardServiceProvider extends ServiceProvider
 {
     /**
      * Register service provider.
@@ -11,7 +11,7 @@ class FranchiseServiceProvider extends ServiceProvider
      */
     public function register()
     {
-//        $this->app->bind('Orchestra\Control\Contracts\Command\Synchronizer', 'Orchestra\Control\Command\Synchronizer');
+        //
     }
 
     /**
@@ -23,9 +23,9 @@ class FranchiseServiceProvider extends ServiceProvider
     {
         $path = realpath(__DIR__.'/../');
 
-        $this->addConfigComponent('blupl/franchises', 'blupl/franchises', $path.'/resources/config');
-        $this->addLanguageComponent('blupl/franchises', 'blupl/franchises', $path.'/resources/lang');
-        $this->addViewComponent('blupl/franchises', 'blupl/franchises', $path.'/resources/views');
+        $this->addConfigComponent('blupl/board', 'blupl/board', $path.'/resources/config');
+        $this->addLanguageComponent('blupl/board', 'blupl/board', $path.'/resources/lang');
+        $this->addViewComponent('blupl/board', 'blupl/board', $path.'/resources/views');
 
         $this->mapExtensionConfig();
 //        $this->bootExtensionEvents();
@@ -55,7 +55,7 @@ class FranchiseServiceProvider extends ServiceProvider
      */
     protected function bootExtensionMenuEvents()
     {
-        $this->app['events']->listen('orchestra.ready: admin', 'Blupl\Franchises\Http\Handlers\FranchiseMenuHandler');
+        $this->app['events']->listen('orchestra.ready: admin', 'Blupl\Board\Http\Handlers\BoardMenuHandler');
     }
 
     /**
@@ -67,8 +67,8 @@ class FranchiseServiceProvider extends ServiceProvider
      */
     protected function bootExtensionRouting($path)
     {
-        $this->app['router']->filter('media.manage', 'Orchestra\Foundation\Http\Filters\CanManage');
-        $this->app['router']->filter('media.csrf', 'Orchestra\Foundation\Http\Filters\VerifyCsrfToken');
+        $this->app['router']->filter('board.manage', 'Orchestra\Foundation\Http\Filters\CanManage');
+        $this->app['router']->filter('board.csrf', 'Orchestra\Foundation\Http\Filters\VerifyCsrfToken');
 
         require_once "{$path}/src/routes.php";
     }
@@ -94,7 +94,7 @@ class FranchiseServiceProvider extends ServiceProvider
      */
     protected function mapExtensionConfig()
     {
-        $this->app['orchestra.extension.config']->map('blupl/franchises', [
+        $this->app['orchestra.extension.config']->map('blupl/board', [
 //            'localtime'   => 'orchestra/control::localtime.enable',
             'admin_role'  => 'orchestra/foundation::roles.admin',
             'member_role' => 'orchestra/foundation::roles.member',
