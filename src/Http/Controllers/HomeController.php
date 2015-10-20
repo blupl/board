@@ -1,4 +1,4 @@
-<?php namespace Blupl\Franchises\Http\Controllers;
+<?php namespace Blupl\Board\Http\Controllers;
 
 use Orchestra\Routing\Controller;
 
@@ -12,6 +12,6 @@ class HomeController extends Controller
     public function index()
     {
 
-        return 'franchises';
+        return 'Board';
     }
 }

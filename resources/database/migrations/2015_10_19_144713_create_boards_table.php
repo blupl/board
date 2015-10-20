@@ -15,9 +15,11 @@ class CreateBoardsTable extends Migration {
 		Schema::create('boards', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('category_name');
+            $table->string('name');
             $table->string('designation');
             $table->string('organization');
+            $table->string('photo');
+            $table->tinyInteger('status')->default('0');
 			$table->timestamps();
 		});
 	}

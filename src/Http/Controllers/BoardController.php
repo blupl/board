@@ -1,12 +1,13 @@
-<?php namespace Blupl\Board\Http\Controllers\Admin;
+<?php namespace Blupl\Franchises\Http\Controllers;
 
-use Blupl\Franchises\Model\Franchise;
-use Blupl\Franchises\Model\FranchiseManagement;
-use Illuminate\Support\Facades\Input;
+
 use Blupl\Franchises\Processor\Franchises as FranchisesProcessor;
+use Exception;
+use Illuminate\Support\Facades\Auth;
+use Laracasts\Flash\Flash;
 use Orchestra\Foundation\Http\Controllers\AdminController;
 
-class HomeController extends AdminController
+class BoardController extends AdminController
 {
 
     public function __construct(FranchisesProcessor $processor)
@@ -28,9 +29,8 @@ class HomeController extends AdminController
      */
     public function index()
     {
-        return $this->processor->index($this);
-    }
 
+    }
 
 
 }

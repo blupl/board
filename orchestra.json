@@ -1,11 +1,11 @@
 {
-    "name": "Franchises",
+    "name": "Board",
     "description": "Franchises Extension",
     "author": "Ahsanul Kabir",
     "url": "https://github.com/",
     "version": "1.0.0",
     "config": {
-        "handles": "franchise"
+        "handles": "board"
     },
     "provides": [
         "Blupl\\Board\\BoardServiceProvider"
